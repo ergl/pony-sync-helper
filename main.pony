@@ -49,6 +49,13 @@ actor Main
       ]
     end
 
+    if (token == "") and (org != "") then
+      env.err.print("Error: access token can't be empty if org is not empty")
+      Help.general(cs).print_help(env.err)
+      env.exitcode(1)
+      return
+    end
+
     let ctx: Context iso = recover Context(headers,
       org,
       show_empty,
