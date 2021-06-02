@@ -32,6 +32,7 @@ actor Main
         return
       | let se: SyntaxError =>
         env.err.print(se.string())
+        Help.general(cs).print_help(env.err)
         env.exitcode(1)
         return
       end
