@@ -16,7 +16,7 @@ actor Main
         [
           OptionSpec.string("github_token", "GitHub personal access token" where short' = 't', default' = "")
           OptionSpec.bool("show_empty", "Show repos with no issues or PRs" where short' = 'e', default' = false)
-          OptionSpec.string("org", "Target org" where short' = 'o')
+          OptionSpec.string("org", "Target org" where short' = 'o', default' = "ponylang")
         ]
       )? .> add_help()?
     else
